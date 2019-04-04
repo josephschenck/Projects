@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<!-- Querying a MySQL Database -->
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Sample Database Query</title>
+   </head>
+
+   <body style = "background-color: #F0E68C">
+      <h2 style = "font-family: arial color: blue">
+         Querying a MySQL database.
+      </h2>
+
+      <form method = "post" action = "./dbsearch.php">
+         <p>Select a field to display:
+
+            <!-- add a select box containing options --> 
+            <!-- for SELECT query                    -->
+            <select name = "select">
+               <option selected = "selected">*</option>
+               <option value="FirstName">FirstName</option>
+               <option value="LastName">LastName</option>
+               <option value="Wnum">Wnum</option>
+               <option value="Height">Height</option>
+            </select>
+         </p>
+
+         For the selected field, enter a search key to match (may be left empty to retrieve all)<br>
+         Search key: <input type = "text" name = "search_key"> <p>
+         <input type = "submit" value = "Send Query"  
+            style = "background-color: blue; 
+            color: yellow; font-weight: bold" />
+      </form>
+
+<p>
+<hr width=50% align=left>
+Or, <p>
+
+
+      <form method = "post" action = "./dbinsert.php">
+         <p>Insert the following record:
+
+            <!-- add a select box containing options --> 
+            <!-- for SELECT query                    -->
+            FirstName: <input type="text" name="FirstName"><p>
+            LastName: <input type="text" name="LastName"><p>
+            Wnum: <input type="text" name="Wnum"><p>
+            Height: <input type="text" name="Height"><p>
+         </p>
+
+         <input type = "submit" value = "Insert" 
+            style = "background-color: blue; 
+            color: yellow; font-weight: bold" />
+      </form>
+
+
+
+
+
+
+   </body>
+</html>
