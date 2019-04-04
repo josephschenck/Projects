@@ -1,0 +1,42 @@
+TODO LIST:
+
+--Completed-------------
+
+Allow the use to login.
+
+------------------------
+
+-- Do Soon----
+
+Register User 
+
+--------------
+
+-- Do Now---------------------------------------------------------
+In app.js we have a react router command that wraps the login
+
+What I need to do is implement a setAppUserState
+
+I need to put in an axios get in order to the user.
+
+So basically figure out how to implement all of the things added
+to app.js into the code for Login.
+
+------------------------------------------------------------------
+
+
+--Just added------------------------------------------------------
+
+We have added a constructor for user in the app.js file
+as well as a constructorDidMount and a setAppUserState 
+which interacts with the ReactRouting for login on the main page. 
+
+------------------------------------------------------------------
+
+
+--plan for what to do next------------------------------------------------------------------------------------------------
+
+So as far as I know, I am setting the basic user in app.js, In login i am going to have to assign it, then when Component
+mounts I get the user (with axios get?) and then the app user is set, which then changes the react router. So do all that
+and things will be Good.
+--------------------------------------------------------------------------------------------------------------------------

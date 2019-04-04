@@ -1,0 +1,73 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import axios from 'axios';  
+
+class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            user: ''
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+
+    handleChange(event) {
+        this.setState({ [event.target.name]: event.target.value });
+        console.log(event.target.value);
+    }
+
+    handleSubmit(event) {
+
+        const useremail = {
+            email: this.state.email, password: this.state.password
+        };
+
+        console.log(useremail);
+        //email: 'admin@envoc.com', password: 'password'
+        axios.post('api/users/login', useremail )
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+            })
+            .catch(error => (alert("Incorrect Login")))
+    }
+    render() {
+        //console.log("render");
+        //console.log(this.props.user);
+        if (this.props.user == 0) {
+            return (
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Email:
+                                 <input type="text" name="email" onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <label>
+                            Password:
+                                 <input type="text" name="password" onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div>
+                    You are currently logged in!
+                    <br /> 
+                </div>
+                )
+        }
+    }
+}
+
+export default Login;
